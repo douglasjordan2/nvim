@@ -417,7 +417,7 @@ require('lazy').setup({
           wrap_goto = true,
         },
       })
-      require('mini.statusline').setup()
+      -- require('mini.statusline').setup()
     end
   },
 
@@ -620,7 +620,7 @@ require('lazy').setup({
       },
       {
         "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
+       "<cmd>Trouble symbols toggle focus=false<cr>",
         desc = "Symbols (Trouble)",
       },
       {
@@ -641,9 +641,6 @@ require('lazy').setup({
     },
   },
 
-  -- AI for now
-  -- 'Exafunction/codeium.vim',
-
   -- language extensions
   -- 'tpope/vim-liquid',
   -- 'pangloss/vim-javascript',
@@ -661,8 +658,31 @@ require('lazy').setup({
       require("nvim-treesitter.configs").setup({
         -- A list of parser names, or "all"
         ensure_installed = {
-          "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-          "jsdoc", "bash",
+          "bash",
+          "c",
+          "comment",
+          "css",
+          "dockerfile",
+          "gitignore",
+          "go",
+          "graphql",
+          "html",
+          "http",
+          "javascript",
+          "jsdoc",
+          "json",
+          "json5",
+          "liquid",
+          "lua",
+          "make",
+          "nginx",
+          "prisma",
+          "regex",
+          "rust",
+          "scss",
+          "tsx",
+          "typescript",
+          "vim",
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -731,11 +751,20 @@ require('lazy').setup({
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls",
-          -- "rust_analyzer",
-          "ts_ls",
+          "ast_grep",
+          "bashls",
+          "biome",
+          "clangd",
+          "css_variables",
+          "dockerls",
           "emmet_ls",
+          "jsonls",
+          "lua_ls",
+          "rust_analyzer",
+          "shopify_theme_ls",
+          "superhtml",
           "tailwindcss",
+          "ts_ls",
         },
         handlers = {
           function(server_name) -- default handler (optional)
@@ -1066,12 +1095,12 @@ require('lazy').setup({
           },
           m = {
             description = "meeting",
-            template = "Meeting on %<%A, %d/%m/%Y at %I:%M%p>\n\n%?",
+            template = "Meeting on %<%A, %m/%d/%Y at %I:%M%p>\n\n%?",
             target = "timestamps/meetings/%<%Y-%m-%d> %[title].org",
           },
           j = {
             description = 'journal',
-            template = 'Journal entry for %<%A, %d/%m/%Y>\n\n%?',
+            template = 'Journal entry for %<%A, %m/%d/%Y>\n\n%?',
             target = 'journals/%<%Y-%m-%d-%a>/%[title].org'
           }
         },

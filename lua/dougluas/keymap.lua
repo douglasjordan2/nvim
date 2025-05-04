@@ -17,19 +17,6 @@ vim.keymap.set('n', '<leader>md', ':lua MiniDiff.toggle_overlay()<CR>', { desc =
 
 map('n', '<C-l>', '<C-i>') --------------------------------------------------------  remap C-i to C-l before remapping l
 
--- colemak-dh
-map('n', '<C-m>', 'h')
-map('n', '<C-n>', 'j')
-map('n', '<C-e>', 'k')
-map('n', '<C-i>', 'l')
-
-map('v', '<C-m>', 'h')
-map('v', '<C-n>', 'j')
-map('v', '<C-e>', 'k')
-map('v', '<C-i>', 'l')
-
-map('i', '<C-o>', ';')
-
 -- timeout
 vim.opt.timeoutlen = 300
 
@@ -61,8 +48,8 @@ map('n', '<leader>wh', '<C-w>t<C-w>H')  ----------------------------------------
 map('n', '<leader>=', '<C-w>=')  --------------------------------------------------  even window sizes
 
 -- cool things with text
-map("v", "J", ":m '<-2<CR>gv=gv")  ------------------------------------------------  move all highlighted text up
-map("v", "K", ":m '>+1<CR>gv=gv")  ------------------------------------------------  move all highlighted text down
+map("v", "J", ":m '>+1<CR>gv=gv")  ------------------------------------------------  move all highlighted text down
+map("v", "K", ":m '<-2<CR>gv=gv")  ------------------------------------------------  move all highlighted text up
 
 -- cursor sanity
 map("n", "J", "mbJ`b")  -----------------------------------------------------------  keep cursor in same place when combining lines with J
