@@ -25,6 +25,23 @@ require('lazy').setup({
   },
 
   {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    config = function()
+      require("hardtime").setup({
+        disabled_keys = {
+          ["<Up>"] = false,
+          ["<Down>"] = false,
+          ["<Left>"] = false,
+          ["<Right>"] = false,
+        }
+      })
+    end
+  },
+
+  {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
@@ -41,6 +58,13 @@ require('lazy').setup({
         duration = 20, -- ms per step
         easing = "linear",
         fps = 60, -- frames per second. Global setting for all animations
+      },
+      ---@class snacks.scratch.Config
+      ---@field ft? string|fun():string
+      scratch = {
+        ft = function()
+          return "markdown"
+        end
       },
       styles = {
         notification = {
@@ -309,7 +333,7 @@ require('lazy').setup({
       { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
       { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
       -- END picker keys
-       { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
       { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
       { "<leader>Bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
       { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
