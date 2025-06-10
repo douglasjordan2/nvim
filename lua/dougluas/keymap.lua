@@ -84,9 +84,12 @@ map('n', '<C-h>', 'gt')  -------------------------------------------------------
 -- buffers
 map('n', '<C-b>', ':enew<CR>')  ---------------------------------------------------  new buffer
 map('n', '<C-n>', ':bnext<CR>')  --------------------------------------------------  next buffer
--- map('n', '<leader>q', ':enew<bar>bd #<CR>')  --------------------------------------  quit buffer
 map('n', '<leader>q', ':lua BufClose()<CR>')  -------------------------------------  quit buffer
 map('n', '<leader>Q', ':lua RestoreBuf()<CR>')  -----------------------------------  restore buffer
+
+-- term
+map('n', '<C-t>', ':enew | term<CR>i')  -------------------------------------------  open new buffer with terminal
+map('t', '<C-e>', '<C-\\><C-n>')  -------------------------------------------------  escape insert mode in term
 
 -- file exporer
 map('n', '<leader>f', ':Oil<CR>')  ------------------------------------------------  open file explorer
